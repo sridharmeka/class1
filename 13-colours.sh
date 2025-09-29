@@ -25,7 +25,7 @@ if [ $1 -eq 0 ]
 then 
 echo " installing $2 is $G success $N"
 else
-echo "intalling $2 is $r failed $N"
+echo "intalling $2 is $R failed $N"
 exit 1
 fi
 }
@@ -33,11 +33,11 @@ fi
 dnf list installed mysql
 if [ $? -ne 0 ]
 then
-echo "mysql is not installed... $Y already installation $N we can proceed with installation"
+echo "mysql is not installed...  already installation we can proceed with installation"
 dnf install mysql -y
 VALIDATE $? "mysql"
 else
-echo -e "mysql is already installed... nothing to do "
+echo -e "mysql is already $N installed $G... $W nothing to do $C "
 fi
 
 dnf list installed python3
